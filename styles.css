@@ -147,6 +147,10 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+span.tomato {
+  color: tomato;
+}
+
 .form-control input,
 .form-control select {
   margin: 0;

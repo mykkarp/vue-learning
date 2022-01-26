@@ -20,7 +20,9 @@
         </div>
       </div>
       <div class="card">
-        <h3>List of notes</h3>
+        <h3 :style="{color: inputValue.length <=4 ? 'green' : inputValue.length <=7 ? 'blue' : 'red' }">List of
+          notes
+        </h3>
         <div class="form-control">
           <input type="text" :placeholder="notePlaceholder" v-model="inputValue" @keypress.enter="addNewNote" />
         </div>
@@ -28,7 +30,7 @@
         <hr />
         <ul class="list" v-if="notes.length !== 0">
           <li class="list-item" v-for="(note, index) of notes">
-            {{ index + 1 }}. {{ note }}
+            <span :class="['bold', {'tomato': note.length > 5}]">{{ index + 1 }}. {{ note }}</span>
             <button class="btn danger" @click="deleteNote(index)">Delete</button>
           </li>
         </ul>
