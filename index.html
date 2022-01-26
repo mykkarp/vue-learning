@@ -22,8 +22,7 @@
       <div class="card">
         <h3>List of notes</h3>
         <div class="form-control">
-          <input type="text" :placeholder="notePlaceholder" :value="inputValue" @input='inputChangeHandler'
-            @keypress.enter="addNewNote" />
+          <input type="text" :placeholder="notePlaceholder" v-model="inputValue" @keypress.enter="addNewNote" />
         </div>
         <button class="btn" type="button" @click="addNewNote">Add</button>
         <hr />
@@ -34,6 +33,8 @@
           </li>
         </ul>
         <div v-else>No notes yet</div>
+        <hr />
+        <div><strong>Total notes: {{ notes.length }}</strong> | Doubled: {{ doubledComputed }}</div>
       </div>
     </div>
   </div>
